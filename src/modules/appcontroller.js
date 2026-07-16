@@ -4,20 +4,33 @@ class AppController {
   constructor() {
     this.projects = [];
     this.projects.push(new Project("Inbox"));
+    this.activeProject = this.projects[0];
    
   }
 
-  addProject(projectAdd) {
-    this.projects.push(projectAdd);
+  addProject(project) {
+    this.projects.push(project);
   }
 
-  removeTodo(projectRemove) {
+  removeProject(projectId) {
     this.projects = this.projects.filter(
-      (projectAdd) => projectAdd.id !== projectRemove,
+      (project) => project.id !== projectId,
     );
   }
 
-  getTodo(findProject) {
-    return this.projects.find((projectAdd) => projectAdd.id === findProject);
+  getProject(projectId) {
+    return this.projects.find((project) => project.id === projectId);
   }
+
+
+
+  currentProject(){
+ return this.activeProject
 }
+
+setActiveProject(projectId){
+  this.activeProject = this.getProject(projectId)
+}
+}
+
+export default AppController;
