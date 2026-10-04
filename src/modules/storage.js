@@ -1,5 +1,5 @@
-import Project from "./project";
-import Todo from "./todo";
+import Project from "./project.js";
+import Todo from "./todo.js";
 
 const save = (projects) => {
   localStorage.setItem("projects", JSON.stringify(projects));

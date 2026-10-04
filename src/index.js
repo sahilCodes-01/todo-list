@@ -1,6 +1,6 @@
-import AppController from "./modules/appcontroller";
-import {load ,save} from "./modules/storage";
-import DOMController from "./modules/domcontroller";
+import AppController from "./modules/appcontroller.js";
+import {load ,save} from "./modules/storage.js";
+import DOMController from "./modules/domcontroller.js";
 
 const savedProjects = load();
 const app = new AppController()
